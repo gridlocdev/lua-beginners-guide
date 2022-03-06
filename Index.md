@@ -18,6 +18,13 @@ I've prepared this guide because I wasn't able to find a written guide on Lua's 
   - [2 - Operators](#2---operators)
     - [Arithmetic](#arithmetic)
     - [Relational](#relational)
+    - [Lexical - Comparisons](#lexical---comparisons)
+  - [3 - Conditionals](#3---conditionals)
+  - [4 - Ternary conditionals](#4---ternary-conditionals)
+    - [How does the Ternary operator work?](#how-does-the-ternary-operator-work)
+  - [5 - Loops](#5---loops)
+    - [For (Numeric)](#for-numeric)
+    - [For (Generic)](#for-generic)
 
 ## Introduction to Lua
 
@@ -74,7 +81,7 @@ Strings are used when you want to represent text. Text data is generally used wh
 -- Declares a variable `message` with a string
 message = "Hello"
 
-print(message) -- Output: 'Hello'
+print(message) --> 'Hello'
 ```
 
 Sometimes, there's a need to get fancy with your strings. If you would like to insert another value inside a string, you would use _string interpolation_. In Lua, that is done with two periods: `..`
@@ -83,7 +90,7 @@ Sometimes, there's a need to get fancy with your strings. If you would like to i
 name = "Bob"
 message = "Hello, "..name.."!"
 
-print(message) -- Output: 'Hello, Bob!'
+print(message) --> 'Hello, Bob!'
 ```
 
 ### Numbers
@@ -122,7 +129,7 @@ The value type `nil` is an empty value that occurs when the program attempts to 
 > In the below example, the `print()` function is attempting to print the value of a variable that hasn't been created yet. So, it will be empty and contain a `nil`.
 
 ```lua
-print(notARealVariable) -- Output: nil
+print(notARealVariable) --> nil
 ```
 
 ### Tables
@@ -160,7 +167,7 @@ superman = {
     allergies = { "Kryptonite" }
 }
 
-print(superman.firstName) -- Output: Clark
+print(superman.firstName) --> Clark
 ```
 
 ## 2 - Operators
@@ -180,30 +187,28 @@ Lua's arithmetic operators follow the standard set found in most other programmi
 | Exponents | ^ |
 | Remainder (Modulo) | % |
 
-> In the below example, each arithmetic operation has two inputs and one output. (The do-end blocks are)
-
 ```lua
 a = 50
 b = 4
 
 -- Addition
-print(a + b) -- Output: 54
+print(a + b) --> 54
 
 -- Subtraction
-print(a - b) -- Output: 46
+print(a - b) --> 46
 
 -- Multiplication
-print(a * b) -- Output: 200
+print(a * b) --> 200
 
 -- Division
-print(a / b) -- Output: 12.5
+print(a / b) --> 12.5
 
 -- Exponents
-print(a^b) -- Output: 6250000.0
+print(a^b) --> 6250000.0
 
 -- Remainder (Modulo)
 -- The 'Modulo' operator divides the two numbers, then outputs the remainder
-print(a % b) -- Output: 2
+print(a % b) --> 2
 ```
 
 ### Relational
@@ -375,4 +380,76 @@ print(conditionalMessage) --> true
 ```
 
 > The `or` example returns `true` as the result of `a < b`.
+
+## 5 - Loops
+
+To avoid typing the same thing over and over again, and also to do the same piece of logic over and over, you would use a **loop** statement.
+
+There's a few different flavors each with their own use cases.
+
+- For
+- Foreach
+- While
+- Repeat until
+
+### For (Numeric)
+
+When you know the exact number of times to do something repeatedly, you would use a **numeric for** loop.
+
+```lua
+for i = 1, 10 do
+    print("This loop has run "..i.." times!")
+end
+```
+
+For loops in Lua consist of a few parts, each separated by a comma (`,`).
+
+1. The first argument (usually named `i`, short-form for _index_) is a variable that represents the number that the loop starts from.
+2. The second argument is the end number that the loop index should be able to reach. When the loop index `i` is about to pass this number, the loop stops and the code moves on to the next statement after the loop.
+3. (Optional) There is also an optional third argument that represents a number to be added to the index _before_ each time the loop should repeat. By default, the loop adds 1 to the index.
+
+Here is an example with the third argument included:
+
+```lua
+-- Increments by 2 each iteration
+for i = 1, 10, 2 do
+    print("The index is: "..i)
+end
+
+-- Increments by -1 (subtracts) each iteration
+for i = 10, 1, -1 do
+    print("The index is: "..i)
+end
+```
+
+> Notice that in the subtracting example, the loop has to start from a higher number and count down to the lower number.
+
+### For (Generic)
+
+When you would like to loop over elements in a table, you could use a **generic for** loop.
+
+Generic loops can be used for tables that have _named_ keys
+
+> `{ prop1 = value1, prop2 = value2, ... }`
+
+as well as when a table does not have named keys
+
+> `{ value1, value2, ...}`
+
+When a table does not contain named keys and just contains values, the `key` value is just the index in the table (e.g. 1, 2, 3).
+
+Because of this, Lua provides two (virtually identical) functions. Each of these is optimized for those use cases:
+
+- `pairs()` - Loop over a table with keys, does not care about order
+- `ipairs()` - Loop over a table with no keys (index-valued keys), cares about order
+
+```lua
+snacks = { "Fruit", "Popcorn", "Chocolate Cake" }
+
+for index, value in ipairs(snacks) do
+    print(value)
+end
+```
+
+To loop over a table that contains keys, you would do so in the same way:
 
