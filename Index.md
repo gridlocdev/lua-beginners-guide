@@ -266,3 +266,44 @@ isCool = true
 print(not isCool) --> false
 ```
 
+## 3 - Conditionals
+
+Sometimes you would only like to execute certain logic in certain cases. To do this, you would use a _conditional_ statement like `if`.
+
+```lua
+a = 3
+b = 4
+
+if (a < b) then
+    print("a is less than b!")
+end
+```
+
+But what if you wanted to print something in the cases where `a` was _greater than_ or _equal to_ `b`? In that case, you would use an `else`.
+
+```lua
+a = 3
+b = 4
+
+if (a < b) then
+    print("a is less than b!")
+else
+    print("a is greater than or equal to b!")
+end
+```
+
+Now, let's say you wanted to know exactly when the two values were equal. To do that, you would add an `elseif` in the middle.
+
+```lua
+a = 3
+b = 4
+
+if (a < b) then
+    print("a is less than b!")
+elseif (a == b)
+    print("a is equal to b!")
+else
+    print("a is greater than b!")
+end
+```
+
