@@ -207,3 +207,26 @@ print(a % b) -- Output: 2
 ```
 
 ### Relational
+
+A common thing to do in computer programs is compare two values. This can be something like checking if two values are equal, or if numerical values are greater or less than one another.
+
+```lua
+print(3 == 5) -- (Equal to) --> false
+print(3 ~= 5) -- (Not equal to) --> true
+print(3 > 5) -- (Greater than) --> false
+print(3 >= 3) -- (Greater than or equal to) --> true
+print(3 < 5) -- (Less than) --> false
+print(3 <= 5) -- (Less than or equal to) --> true
+```
+
+Each of the other data types are frequently compared as well using the equal to (`==`) and not equal to (`~=`) operators.
+
+```lua
+name = "James"
+isCool = true
+
+print(name == "James") --> true
+print(isCool == true) --> true
+print(newVariable ~= nil) --> false
+```
+
