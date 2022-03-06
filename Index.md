@@ -230,3 +230,39 @@ print(isCool == true) --> true
 print(newVariable ~= nil) --> false
 ```
 
+### Lexical - Comparisons
+
+The word _lexical_ means something that relates to the vocabulary of a language. In the case of programming, it typically refers to a written word that has a meaning in the program.
+
+The following words function as _operators_ in Lua:
+
+- and
+- or
+- not
+
+The `and` operator checks if both conditions are true. If they are, it returns the appropriate result.
+
+```lua
+name = "James"
+isCool = true
+
+print(name == "James" and isCool == false) --> false
+```
+
+Conversely, if you would like to check if either one of the conditions is true, you would use `or`:
+
+```lua
+name = "James"
+isCool = true
+
+print(name == "James" or isCool == false) --> true
+```
+
+When you would like to check for the _opposite_ of a boolean result, you would use the `not` operator.
+
+```lua
+isCool = true
+
+print(not isCool) --> false
+```
+
