@@ -494,7 +494,60 @@ end
 --  firstName       Clark
 --  age             25
 ```
+
+### Repeat Until
+
+The **repeat until** loop is used when you would like to do something over and over until a condition is true.
+
+> Remember: If your condition never becomes false, your code will run in an **infinite loop**. So, make sure that your condition will eventually return true.
+
+The key difference between this and a `while` loop is what happens on their first round.
+
+- Use a `while` loop if you would like to check your condition **before** running the code on the first round.
+- Use a `repeat until` loop if you would like to check your condition **after** running the code on the first round.
+
+A very common use case for these type of loops is to check user input, where you would like to only proceed once you've verified the user has typed in the correct thing.
+
+```lua
+print("What is 2 + 2?")
+answer = "4"
+
+repeat
+    input = io.read() -- Read the user's keyboard input
+    if input ~= answer then
+        print("Wrong answer, try again!")
+    end
+until input == answer
+
+print("Congrats, that's right!")
 ```
 
-To loop over a table that contains keys, you would do so in the same way:
+> The above example will ask the user to keep guessing until they guess the number `4` into the console input.
+
+Hey but wait a minute, in this game it repeats forever until they guess the correct number. What if we wanted to let the user manually exit the program?
+
+To do that, we would use the `break` keyword, which allows _breaking_ out of a loop.
+
+> In the below example, if the user types in "quit", the `break` statement will exit out of the loop it is in and not prompt the user for another answer.
+
+```lua
+print("What is 30 + 12?")
+answer = "42"
+
+print("(Type 'quit' to exit if this is too hard)")
+
+repeat
+    input = io.read() -- Read the user's keyboard input
+    if input == "quit" then 
+        break -- Exits out of the `repeat until` loop
+    elseif input ~= answer then
+        print("Wrong answer, try again!")
+    else
+        print("Congrats, that's right!")
+    end
+until input == answer
+```
+
+> Syntactically, the `repeat until` loop is Lua's named flavor of the `do while` loop commonly found in other programming languages.
+
 
