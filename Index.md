@@ -26,6 +26,7 @@ I've prepared this guide because I wasn't able to find a written guide on Lua's 
     - [For (Numeric)](#for-numeric)
     - [For (Generic)](#for-generic)
     - [Repeat Until](#repeat-until)
+    - [While](#while)
 
 ## Introduction to Lua
 
@@ -550,4 +551,25 @@ until input == answer
 
 > Syntactically, the `repeat until` loop is Lua's named flavor of the `do while` loop commonly found in other programming languages.
 
+### While
 
+**While** loops are used when you would like to do something over and over until a condition is true, but check the condition first before running it for the first time.
+
+The key difference between this and a `repeat until` loop is what happens on their first round.
+
+- Use a `while` loop if you would like to check your condition **before** running the code on the first round.
+- Use a `repeat until` loop if you would like to check your condition **after** running the code on the first round.
+
+```lua
+colors = {}
+print("What are your two favorite colors?")
+
+-- Note: `#` in `#colors` is for the length of a table with non-named keys.
+while #colors < 2 do
+    print("Colors entered: "..#colors)
+    input = io.read()
+    table.insert(colors, input)
+end
+
+print(colors[1].." and "..colors[2].." are awesome! I wonder what they would look like together.")
+```
