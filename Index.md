@@ -8,6 +8,7 @@ I've prepared this guide because I wasn't able to find a written guide on Lua's 
   - [Introduction to Lua](#introduction-to-lua)
     - [Pros](#pros)
     - [Cons](#cons)
+  - [What can I do with Lua?](#what-can-i-do-with-lua)
   - [How to get started programming with Lua](#how-to-get-started-programming-with-lua)
   - [1 - Data Types](#1---data-types)
     - [Strings](#strings)
@@ -34,13 +35,25 @@ Lua is a fast, simple, and portable programming language best (and most commonly
 
 ### Pros
 
-- Fast
+- Fast execution
 - Lightweight
 - Easy to integrate into other programs
 
 ### Cons
 
-- Limited error handling support
+- Limited error handling support due to its small size
+
+## What can I do with Lua?
+
+Lua is quite a versatile programming language. But, it's mostly best at things like:
+
+| Use Case | Description | Examples |
+| --- | --- | --- |
+| Embedded programming | Writing code to run on IoT or small computing devices | Raspberry Pi |
+| Video game programming | Writing video game logic | PICO-8, LOVE2D, Defold, ROBLOX, Godot |
+| Network programming | Writing fast and small programs for computer networking | CISCO Systems, nmap, ModSecurity |
+| Complex config files | Writing configuration files that require lots of complexity and advanced features | Neovim config |
+| Cross-language libraries | Writing flexible and interoperable libraries that can work with multiple programming languages | NLua (.NET / C#) |
 
 ## How to get started programming with Lua
 
@@ -55,7 +68,7 @@ Or, if you would like to run things locally on your computer you will need:
 
 > Note: If you do run into any issues during this tutorial or while installing the pre-requisite software, try typing your exact question into a search engine like Google or DuckDuckGo and see what comes up!
 >
-> Anecdotally, about half of my time spent while working in computer programming involves finding information on the internet. It's a great skill to build up, as it's useful for finding out things you don't know, or things that you've just forgotten over time. (Which coincidentally, happens a lot when working with computers and software in general!)
+> Troubleshooting issues by looking up information online is one of the main portions of time spent computer programming; there's no sense wracking your brain to try and remember something specific when a refresher is usually just a moderately-crafted Google search away. It's a great skill to build up as it's useful for finding out things you don't know or things that you've just forgotten over time!
 
 ## 1 - Data Types
 
