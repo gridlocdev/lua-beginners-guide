@@ -1,8 +1,12 @@
 # Welcome to Lua
 
-![lua-logo]()
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg" width="300px" alt="Lua logo"/> 
+</p>  
 
-I've prepared this guide because I wasn't able to find a written guide on Lua's basics as I was learning, and figured it would be useful to others as well.
+This is a beginner-friendly guide to the Lua programming language. This guide is intended for people that are completely new to programming as well as folks that already might have experience with other programming languages (such as Python, JavaScript, or C#).
+
+I wasn't able to find a written and easy-to-understand tutorial anywhere else, so I've gathered all of the information I've learned and gathered the most fundamental concepts here in the case it might be useful to you as well.
 
 - [Welcome to Lua](#welcome-to-lua)
   - [Introduction to Lua](#introduction-to-lua)
