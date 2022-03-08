@@ -25,6 +25,7 @@ I've prepared this guide because I wasn't able to find a written guide on Lua's 
   - [5 - Loops](#5---loops)
     - [For (Numeric)](#for-numeric)
     - [For (Generic)](#for-generic)
+    - [Repeat Until](#repeat-until)
 
 ## Introduction to Lua
 
@@ -394,7 +395,7 @@ There's a few different flavors each with their own use cases.
 
 ### For (Numeric)
 
-When you know the exact number of times to do something repeatedly, you would use a **numeric for** loop.
+When you know the exact number of times to do something repeatedly, you would use a **numeric** for loop.
 
 ```lua
 for i = 1, 10 do
@@ -426,7 +427,7 @@ end
 
 ### For (Generic)
 
-When you would like to loop over elements in a table, you could use a **generic for** loop.
+When you would like to loop over elements in a table, you could use a **generic** for loop.
 
 Generic loops can be used for tables that have _named_ keys
 
@@ -436,19 +437,63 @@ as well as when a table does not have named keys
 
 > `{ value1, value2, ...}`
 
-When a table does not contain named keys and just contains values, the `key` value is just the index in the table (e.g. 1, 2, 3).
-
 Because of this, Lua provides two (virtually identical) functions. Each of these is optimized for those use cases:
 
-- `pairs()` - Loop over a table with keys, does not care about order
-- `ipairs()` - Loop over a table with no keys (index-valued keys), cares about order
+- `ipairs()` - Loop over a table with no keys (index-valued keys), for when you care about the order the items are processed
+- `pairs()` - Loop over a table with keys, does not preserve the same order
+
+When a table does not contain named keys and just contains values, the `key` value is just the index in the table (e.g. 1, 2, 3).
 
 ```lua
 snacks = { "Fruit", "Popcorn", "Chocolate Cake" }
 
 for index, value in ipairs(snacks) do
+    print(index, value)
+end
+
+-- The above outputs:
+--  1       Fruit
+--  2       Popcorn
+--  3       Chocolate Cake
+```
+
+You also don't technically need to write out the first argument if you don't plan on using the index. A common code convention is to use an underscore (`_`) known as a _discard_ variable.
+
+```lua
+snacks = { "Fruit", "Popcorn", "Chocolate Cake" }
+
+for _, value in ipairs(snacks) do
     print(value)
 end
+
+-- The above outputs:
+--  Fruit
+--  Popcorn
+--  Chocolate Cake
+```
+
+To loop over a table that contains keys, you would do so in the same way, but just using the `pairs()` function instead:
+
+```lua
+superman = {
+    firstName = "Clark",
+    lastName = "Kent",
+    age = 25,
+    canFly = true,
+    allergies = { "Kryptonite" }
+}
+
+for key, value in pairs(superman) do
+    print(key, value)
+end
+
+-- The above outputs:
+--  canFly          true
+--  lastName        Kent
+--  allergies       table: 0x55b668f326b0
+--  firstName       Clark
+--  age             25
+```
 ```
 
 To loop over a table that contains keys, you would do so in the same way:
