@@ -37,6 +37,8 @@ I wasn't able to find a written and easy-to-understand tutorial anywhere else, s
     - [Neither](#neither)
     - [Only Input](#only-input)
     - [Only Output](#only-output)
+  - [7 - Scoping](#7---scoping)
+  - [8 - Modules](#8---modules)
 
 ## Introduction to Lua
 
@@ -662,3 +664,42 @@ else
     print("Today is "..dayOfWeek)
 end
 ```
+
+## 7 - Scoping
+
+In simple programs like the examples mentioned previously, limiting the access of which variables/functions can see other variables/functions is not too important, as most of the program executes within the same scope.
+
+But, as your project grows in complexity by adding more features and starts branching to multiple files, it becomes _drastically_ more important to make sure that you limit things from accessing things it should probably not need to. 
+
+This prevents quite a bit of headache when debugging, as you can more easily track where your functions are being called, as well as where each of your variables are being set / read from.
+
+There are two types of scope in Lua, **global** scope and **local** scope.
+
+- Global scope: Accessible to be read from and written to anywhere in the current file, as well as in any [modules](#8---modules) that are imported.
+- `local` scope: Only accessible from within the parent code-block (such as a function, conditional, loop, etc; or just within the file if the variable/function is not located within any other blocks of code)
+
+> A good rule of thumb is just to create everything under `local` scope, and then when you specifically have a use case for using global values you would create those as necessary. 
+
+To locally scope your variables/functions, you would use the `local` keyword.
+
+```lua
+local names = {
+    "Jimmy",
+    "Johnny",
+    "Fred"
+}
+
+local function printInUpperCase(text)
+    local upperCaseName = string.upper(text)
+    print(upperCaseName)
+end
+
+printInUpperCase("Hello friends:")
+
+for _, value in ipairs(names) do
+    printInUpperCase(value)
+end
+```
+
+> Note: Since function and loop parameters would _always_ be local, you do not need to explicitly state those as local as the Lua interpreter will do that for you.
+
