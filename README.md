@@ -32,6 +32,11 @@ I wasn't able to find a written and easy-to-understand tutorial anywhere else, s
     - [For (Generic)](#for-generic)
     - [Repeat Until](#repeat-until)
     - [While](#while)
+  - [6 - Functions](#6---functions)
+    - [Input + Output](#input--output)
+    - [Neither](#neither)
+    - [Only Input](#only-input)
+    - [Only Output](#only-output)
 
 ## Introduction to Lua
 
@@ -589,4 +594,71 @@ while #colors < 2 do
 end
 
 print(colors[1].." and "..colors[2].." are awesome! I wonder what they would look like together.")
+```
+
+## 6 - Functions
+
+**Functions** are used when you would like to re-use the same chunk of code in more than one place. This helps keep code readable and easier to manage.
+
+Functions can have two parts, an _input_ and an _output_. Depending on what type of logic you have, you may have either none of these, both of these, or just one of the two.
+
+- **input** - A set of one or more values that help determine what the function should do or output (also known as "arguments" or "parameters")
+- **output** - The resulting value of the action taken by the function.
+
+To output something from a function, you would use the `return` keyword, followed by the value you would like to return. When a value is returned, it is passed back to whichever line of code called the function.
+
+### Input + Output
+
+```lua
+function sum(number1, number2)
+    return number1 + number2
+end
+
+print(sum(3, 3))
+print(sum(33, 26))
+print(sum(335, 834))
+```
+
+> In the above example, the `sum()` function takes two numbers to add as parameters, then outputs the sum as a result. The result then is passed to `print()`, which then prints it to the console.
+
+### Neither
+
+```lua
+function printCurrentTime()
+    print(os.date())
+end
+
+printCurrentTime()
+```
+
+> In the above example, the `printCurrentTime()` function prints the computer's date and time to the console.
+
+### Only Input
+
+```lua
+function printGreeting(name)
+    print("Hello there, "..name.."!")
+end
+
+printGreeting("John")
+printGreeting("Mervis")
+```
+
+> In the above example, the `printGreeting()` function takes a name and prints a greeting message to the console.
+
+### Only Output
+
+```lua
+function getDayOfWeek()
+    return os.date("%A")
+end
+
+dayOfWeek = getDayOfWeek()
+
+if dayOfWeek == "Wednesday" then
+    print("It is Wednesday, my dudes.")
+    print("AAAAAAAAAAAAAAAAAAAAAAAAA")
+else 
+    print("Today is "..dayOfWeek)
+end
 ```
