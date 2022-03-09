@@ -194,6 +194,7 @@ superman = {
 }
 
 print(superman.firstName) --> Clark
+print(superman.canFly) --> true
 ```
 
 ## 2 - Operators
@@ -340,7 +341,7 @@ end
 
 ## 4 - Ternary conditionals
 
-Sometimes, it's easiest to organize your code by using what's known as a **_ternary_ statement** in cases where you'd like to return either one value or another based on a condition.
+Sometimes, it's easiest to organize your conditional statements by using what's known as a **_ternary_ statement** in cases where you'd like to return either one value or another based on a condition.
 
 The word **ternary** means "Composed of three parts"; and a ternary _statement_ is a conditional that is composed of three parts:
 
@@ -409,7 +410,7 @@ print(conditionalMessage) --> true
 
 ## 5 - Loops
 
-To avoid typing the same thing over and over again, and also to do the same piece of logic over and over, you would use a **loop** statement.
+When you'd like to run the same chunk of code repeatedly, you would use a **loop** statement.
 
 There's a few different flavors each with their own use cases.
 
@@ -703,3 +704,4 @@ end
 
 > Note: Since function and loop parameters would _always_ be local, you do not need to explicitly state those as local as the Lua interpreter will do that for you.
 
+## 8 - Modules
