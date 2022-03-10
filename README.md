@@ -669,7 +669,7 @@ end
 
 ### Alternative Function Syntax
 
-If your function happens to take a **string** as a parameter, you can also omit the parenthesis `()` and call your function like this:
+If your function happens to take a singular **string** as a parameter, you can also omit the parenthesis `()` and call your function like this:
 
 ```lua
     function printGreeting(name)
@@ -719,3 +719,52 @@ end
 > Note: Since function and loop parameters would _always_ be local, you do not need to explicitly state those as local as the Lua interpreter will do that for you.
 
 ## 8 - Modules
+
+When it comes time to use an external library, or when you get enough complexity that you would like to split your code into multiple files, you would use **modules**.
+
+Modules are any Lua files that have something that it exports. Everything in a Lua file that is globally scoped can be accessed by other files that import it as a module.
+
+To import a module, you use the `require()` function, and supply the name of a Lua file (without the `.lua` file extension) that exists in the same directory.
+
+```lua
+-- File: mod.lua
+local message = "Hello!"
+
+function sayHello()
+    print(message)
+end
+
+------------------------------------
+-- File: main.lua
+
+require "mod"
+
+sayHello()
+```
+
+> In the above example, the globally scoped function `sayHello()` is able to be accessed by the file that imports the module. But, since the variable `message` is _locally_ scoped, it cannot be accessed.
+
+Although the above example works, common practice for modules is to export a table with all of your exported functions and variables tied to it, sort of like a _namespace_. This helps make your module code easier to read and also lets you more easily know where your module variables and functions are coming from.
+
+```lua
+-- File: mod.lua
+mod = {}
+
+local message = "Hello"
+mod.message2 = "World!"
+
+function mod.sayHello()
+    print(message)
+end
+
+------------------------------------
+-- File: main.lua
+
+require "mod"
+
+mod.sayHello()
+print mod.message2
+```
+
+> In the above example, the module `mod` has a globally-scoped table, which allows the importing file to use the table's functions as well as global variables.
+
