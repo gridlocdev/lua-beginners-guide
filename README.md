@@ -666,6 +666,19 @@ else
 end
 ```
 
+### Alternative Function Syntax
+
+If your function happens to take a **string** as a parameter, you can also omit the parenthesis `()` and call your function like this:
+
+```lua
+    function printGreeting(name)
+    print("Hello there, "..name.."!")
+end
+
+printGreeting "John" --> Hello there, John!
+printGreeting "Mervis" --> Hello there, Mervis!
+```
+
 ## 7 - Scoping
 
 In simple programs like the examples mentioned previously, limiting the access of which variables/functions can see other variables/functions is not too important, as most of the program executes within the same scope.
