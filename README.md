@@ -33,10 +33,11 @@ I wasn't able to find a written and easy-to-understand tutorial anywhere else, s
     - [Repeat Until](#repeat-until)
     - [While](#while)
   - [6 - Functions](#6---functions)
-    - [Input + Output](#input--output)
+    - [Both Input + Output](#both-input--output)
     - [Neither](#neither)
     - [Only Input](#only-input)
     - [Only Output](#only-output)
+    - [Alternative Function Syntax](#alternative-function-syntax)
   - [7 - Scoping](#7---scoping)
   - [8 - Modules](#8---modules)
 
@@ -449,7 +450,7 @@ for i = 10, 1, -1 do
 end
 ```
 
-> Notice that in the subtracting example, the loop has to start from a higher number and count down to the lower number.
+> Notice that in the second example with subtraction, the loop has to start from a higher number and count down to the lower number.
 
 ### For (Generic)
 
@@ -457,7 +458,7 @@ When you would like to loop over elements in a table, you could use a **generic*
 
 Generic loops can be used for tables that have _named_ keys
 
-> `{ prop1 = value1, prop2 = value2, ... }`
+> `{ key1 = value1, key2 = value2, ... }`
 
 as well as when a table does not have named keys
 
@@ -606,11 +607,11 @@ print(colors[1].." and "..colors[2].." are awesome! I wonder what they would loo
 Functions can have two parts, an _input_ and an _output_. Depending on what type of logic you have, you may have either none of these, both of these, or just one of the two.
 
 - **input** - A set of one or more values that help determine what the function should do or output (also known as "arguments" or "parameters")
-- **output** - The resulting value of the action taken by the function.
+- **output** - The resulting value(s) of the action taken by the function.
 
-To output something from a function, you would use the `return` keyword, followed by the value you would like to return. When a value is returned, it is passed back to whichever line of code called the function.
+To output something from a function, you would use the `return` keyword, followed by the one or more values you would like to return. After it gets returned, it is passed back to whichever line of code called the function.
 
-### Input + Output
+### Both Input + Output
 
 ```lua
 function sum(number1, number2)
@@ -683,7 +684,7 @@ printGreeting "Mervis" --> Hello there, Mervis!
 
 In simple programs like the examples mentioned previously, limiting the access of which variables/functions can see other variables/functions is not too important, as most of the program executes within the same scope.
 
-But, as your project grows in complexity by adding more features and starts branching to multiple files, it becomes _drastically_ more important to make sure that you limit things from accessing things it should probably not need to. 
+But, as your project grows in complexity with more features and starts branching to multiple files, it becomes _drastically_ more important to make sure that you limit things from accessing things it should probably not need to.
 
 This prevents quite a bit of headache when debugging, as you can more easily track where your functions are being called, as well as where each of your variables are being set / read from.
 
