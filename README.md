@@ -62,10 +62,10 @@ Lua is quite a versatile programming language. But, it's mostly best at things l
 | Use Case | Description | Examples |
 | --- | --- | --- |
 | Embedded programming | Writing code to run on IoT or small computing devices | Raspberry Pi |
-| Video game programming | Writing video game logic | PICO-8, LOVE2D, Defold, ROBLOX, Godot |
-| Network programming | Writing fast and small programs for computer networking | CISCO Systems, nmap, ModSecurity |
-| Complex config files | Writing configuration files that require lots of complexity and advanced features | Neovim config |
+| Video game programming | Writing video game logic |LOVE2D, ROBLOX, PICO-8, Defold |
+| Network programming | Writing fast and small programs for computer networking | CISCO Systems, nmap, Kong API Gateway, ModSecurity |
 | Cross-language libraries | Writing flexible and interoperable libraries that can work with multiple programming languages | NLua (.NET / C#) |
+| Complex config files | Writing configuration files that require lots of complexity and advanced features | Neovim config |
 
 ## How to get started programming with Lua
 
