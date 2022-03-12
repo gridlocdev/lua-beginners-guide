@@ -1,7 +1,7 @@
 # Welcome to Lua
 
 <p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg" width="300px" alt="Lua logo"/> 
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg" width="300px" alt="Lua logo"/>
 </p>  
 
 This is a beginner-friendly guide to the Lua programming language. This guide is intended for people that are completely new to programming as well as folks that already might have experience with other programming languages (such as Python, JavaScript, or C#).
@@ -40,6 +40,7 @@ I wasn't able to find a written and easy-to-understand tutorial anywhere else, s
     - [Alternative Function Syntax](#alternative-function-syntax)
   - [7 - Scoping](#7---scoping)
   - [8 - Modules](#8---modules)
+  - [End Note](#end-note)
 
 ## Introduction to Lua
 
@@ -693,7 +694,7 @@ There are two types of scope in Lua, **global** scope and **local** scope.
 - Global scope: Accessible to be read from and written to anywhere in the current file, as well as in any [modules](#8---modules) that are imported.
 - `local` scope: Only accessible from within the parent code-block (such as a function, conditional, loop, etc; or just within the file if the variable/function is not located within any other blocks of code)
 
-> A good rule of thumb is just to create everything under `local` scope, and then when you specifically have a use case for using global values you would create those as necessary. 
+> A good rule of thumb is just to create everything under `local` scope, and then when you specifically have a use case for using global values you would create those as necessary.
 
 To locally scope your variables/functions, you would use the `local` keyword.
 
