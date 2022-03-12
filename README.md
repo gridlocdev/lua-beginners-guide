@@ -767,5 +767,18 @@ mod.sayHello()
 print mod.message2
 ```
 
-> In the above example, the module `mod` has a globally-scoped table, which allows the importing file to use the table's functions as well as global variables.
+> In the above example, the module `mod` has a globally-scoped table also named `mod`, which allows the importing file to use the table's functions as well as global variables under the same alias.
 
+## End Note
+
+I will leave you with a few pieces of general programming advice, that hopefully can be helpful in your journey not just with Lua, but with software development in general:
+
+- Never be afraid to ask questions, either from your peers or from online resources like StackOverflow. An important part of gaining wisdom is knowing what you want to know, and being able to come up with questions is usually the best way of doing that.
+- At first, make sure to start building; even if it's something small and silly like a number-guessing game. As you and your skills grow, the problems you would like to solve can grow with you!
+  - > It's easy to get into analysis-paralysis and never move on from tutorials to real projects. Starting small makes the process both easier and lets you more easily gain strategies over time for how to solve problems more effectively.
+- Simplify problems and projects by breaking them down into smaller individual chunks. Writing/typing these out can also be a useful way to more clearly think about each one individually!
+- Learn to use [GitHub](https://github.com/)! Having a place to store and share your projects is awesome, and also knowing how to track changes to your projects over time is an essential part of building software.
+
+All in all, hopefully the concepts in this guide have helped you understand the syntax of the language, as well as learn how to create great computer programs with Lua!
+
+> Note: If you notice anything missing or something that can be improved, feel free to submit a pull request on GitHub!
