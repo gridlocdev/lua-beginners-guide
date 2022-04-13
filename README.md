@@ -244,13 +244,33 @@ print(a % b) --> 2
 
 A common thing to do in computer programs is compare two values. This can be something like checking if two values are equal, or if numerical values are greater or less than one another.
 
+| Equator | Symbol |
+| --- | --- |
+| Equal to | == |
+| Not equal to | ~= |
+| Greater than | > |
+| Greater than or equal to | >= |
+| Less than | < |
+| Less than or equal to | <= |
+
 ```lua
-print(3 == 5) -- (Equal to) --> false
-print(3 ~= 5) -- (Not equal to) --> true
-print(3 > 5) -- (Greater than) --> false
-print(3 >= 3) -- (Greater than or equal to) --> true
-print(3 < 5) -- (Less than) --> false
-print(3 <= 5) -- (Less than or equal to) --> true
+-- Equal to
+print(3 == 5) --> false
+
+-- Not equal to
+print(3 ~= 5) --> true
+
+-- Greater than
+print(3 > 5) --> false
+
+-- Greater than or equal to
+print(3 >= 3) --> true
+
+-- Less than
+print(3 < 5) --> false
+
+-- Less than or equal to
+print(3 <= 5) --> true
 ```
 
 Each of the other data types are frequently compared as well using the equal to (`==`) and not equal to (`~=`) operators.
