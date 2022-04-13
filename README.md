@@ -763,31 +763,31 @@ require "mod"
 sayHello()
 ```
 
-> In the above example, the globally scoped function `sayHello()` is able to be accessed by the file that imports the module. But, since the variable `message` is _locally_ scoped, it cannot be accessed.
+> In the above example, the globally scoped function `sayHello()` is able to be accessed by the file that imports the module. But, since the variable `message` is _locally_ scoped, it cannot be explicitly used in the file that imports the `mod.lua` file.
 
 Although the above example works, common practice for modules is to export a table with all of your exported functions and variables tied to it, sort of like a _namespace_. This helps make your module code easier to read and also lets you more easily know where your module variables and functions are coming from.
 
 ```lua
--- File: mod.lua
-mod = {}
+-- File: greeter.lua
+greeter = {}
 
 local message = "Hello"
-mod.message2 = "World!"
+greeter.message2 = "World!"
 
-function mod.sayHello()
+function greeter.sayHello()
     print(message)
 end
 
 ------------------------------------
 -- File: main.lua
 
-require "mod"
+require "greeter"
 
-mod.sayHello()
-print mod.message2
+greeter.sayHello()
+print greeter.message2
 ```
 
-> In the above example, the module `mod` has a globally-scoped table also named `mod`, which allows the importing file to use the table's functions as well as global variables under the same alias.
+> In the above example, the module file `greeter.lua` has a globally-scoped table also named `greeter`, which allows the importing file to use the table's functions as well as global variables under the same alias.
 
 ## End Note
 
