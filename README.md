@@ -48,6 +48,7 @@ Lua is a fast, simple, and portable programming language best (and most commonly
 
 ### Pros
 
+- Simple syntax
 - Fast execution
 - Lightweight
 - Easy to integrate into other programs
@@ -85,7 +86,7 @@ Or, if you would like to run things locally on your computer you will need:
 
 ## 1 - Data Types
 
-There are 5 basic types of data in Lua:
+There are 5 fundamental types of data in Lua:
 
 | Type | Example | Description |
 | --- | --- | --- |
