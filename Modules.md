@@ -60,7 +60,7 @@ tambre.whisper("World")
 
 ## Using Modules in Packages from the Internet
 
-To save time, effort, and reduce complexity, it's also common practice to use chunks of code that other people/teams have written. These authors put chunks of code on the internet in the form of **packages** for other people to use!
+To save time, effort, and reduce complexity, it's also common practice to use chunks of code that other people/teams have written. These authors put chunks of code on the internet in the form of **packages** for other people to use.
 
 > Note: When using a package from the internet, make sure that you trust the author(s) and/or have a general understanding of what the code you are downloading is doing! 
 
