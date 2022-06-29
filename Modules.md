@@ -1,4 +1,4 @@
-# Bonus - Modules
+# Lua - Modules
 
 Depending on the size and scope of your computer program, it could be a great idea to compartmentalize code into smaller, more re-usable chunks.
 

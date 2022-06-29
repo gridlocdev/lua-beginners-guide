@@ -1,4 +1,4 @@
-# Bonus - Ternary conditionals
+# Lua - Ternary conditionals
 
 Sometimes, it's easiest to organize your conditional statements by using what's known as a **_ternary_ statement** in cases where you'd like to store either one value or another based on a condition.
 
