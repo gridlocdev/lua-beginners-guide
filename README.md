@@ -64,7 +64,7 @@ Lua is quite a versatile programming language. But, it's mostly best at things l
 | Use Case | Description | Examples |
 | --- | --- | --- |
 | Embedded programming | Writing code to run on IoT or small computing devices | Raspberry Pi |
-| Video game programming | Writing video game logic |LOVE2D, ROBLOX, PICO-8, Defold |
+| Video game programming | Writing video game logic | ROBLOX, PICO-8, LOVE2D, Defold |
 | Network programming | Writing fast and small programs for computer networking | CISCO Systems, nmap, Kong API Gateway, ModSecurity |
 | Cross-language libraries | Writing flexible and interoperable libraries that can work with multiple programming languages | NLua (.NET / C#) |
 | Complex config files | Writing configuration files that require lots of complexity and advanced features | Neovim config |
@@ -802,4 +802,4 @@ I will leave you with a few pieces of general programming advice, that hopefully
 
 All in all, hopefully the concepts in this guide have helped you understand the syntax of the language, as well as learn how to create great computer programs with Lua!
 
-> Note: If you notice anything missing or something that can be improved, feel free to submit a pull request on GitHub!
+> Note: If you notice anything missing or something that can be improved, feel free to fork this repo and submit a pull request on GitHub!
