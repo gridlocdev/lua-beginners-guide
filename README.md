@@ -74,7 +74,7 @@ The easiest way to get started without installing anything is to use an in-brows
 
 Or, if you would like to run things locally on your computer you will need:
 
-- A code editor (such as [Visual Studio Code](https://code.visualstudio.com) with a [debugging extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) or [ZeroBrane Studio](https://studio.zerobrane.com/download?not-this-time)).
+- A code editor (such as [Visual Studio Code](https://code.visualstudio.com) with a [debugging extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua), or [ZeroBrane Studio](https://studio.zerobrane.com/download)).
 - An installed version of the [Lua language runtime](https://www.lua.org/download.html)
 
 > Note: If you do run into any issues during this tutorial or while installing the pre-requisite software, try typing your exact question into a search engine like Google or DuckDuckGo and see what comes up!
