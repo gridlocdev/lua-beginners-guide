@@ -25,21 +25,18 @@ I wasn't able to find a written and easy-to-understand tutorial anywhere else, s
     - [Relational](#relational)
     - [Lexical - Comparisons](#lexical---comparisons)
   - [3 - Conditionals](#3---conditionals)
-  - [4 - Ternary conditionals](#4---ternary-conditionals)
-    - [How does the Ternary operator work?](#how-does-the-ternary-operator-work)
-  - [5 - Loops](#5---loops)
+  - [4 - Loops](#4---loops)
     - [For (Numeric)](#for-numeric)
     - [For (Generic)](#for-generic)
     - [Repeat Until](#repeat-until)
     - [While](#while)
-  - [6 - Functions](#6---functions)
+  - [5 - Functions](#5---functions)
     - [Both Input + Output](#both-input--output)
     - [Neither](#neither)
     - [Only Input](#only-input)
     - [Only Output](#only-output)
     - [Alternative Function Syntax](#alternative-function-syntax)
-  - [7 - Scoping](#7---scoping)
-  - [8 - Modules](#8---modules)
+  - [6 - Scoping](#6---scoping)
   - [End Note](#end-note)
 
 ## Introduction to Lua
@@ -362,76 +359,7 @@ else
 end
 ```
 
-## 4 - Ternary conditionals
-
-Sometimes, it's easiest to organize your conditional statements by using what's known as a **_ternary_ statement** in cases where you'd like to return either one value or another based on a condition.
-
-The word **ternary** means "Composed of three parts"; and a ternary _statement_ is a conditional that is composed of three parts:
-
-1. A condition
-2. A result to return if the condition is true
-3. A result to return if the condition is false
-
-For example, the following code without a ternary:
-
-```lua
-a = 3
-b = 4
-
-if (a < b) then
-    print("a is less than b!")
-else
-    print("a is greater than or equal to b!")
-end
-```
-
-could be simplified to:
-
-```lua
-a = 3
-b = 4
-
-message = a < b and "a is less than b!" or "a is greater than or equal to b!"
-print(message)
-```
-
-### How does the Ternary operator work?
-
-> Feel free to skip this part if you were satisfied by the above explanation. But, if you're curious on the `and` and `or` operator feel free to read on to learn more!
-
-But _what exactly is going on here?_  That ternary statement kind of looks funky. Well, in Lua, the `and` and `or` operators also double up as a second type of operator that lets you split the type of output you receive.
-
-Each value in a Lua program under the hood (even though they don't seem to) is considered as either `true` or `false`. Every value evaluates to `true`, except for `nil` and `false`.
-
-Ternary (and other statements using `and` and `or`) are evaluated from left to right:
-
-- `and` continues forward if everything to the left is `true`
-- `or` continues forward if everything to the left is `false`
-If the evaluator can't continue forward any further, it returns the value from where it's at.
-
-In the below example, the combination of a statement `and` then a value will return the value since anything that isn't `false` or `nil` is **always** true.
-
-```lua
-a = 3
-b = 4
-conditionalMessage = a < b and "a is less than b!"
-
-print(conditionalMessage) --> "a is less than b!"
-```
-
-Conversely, `or` does the opposite:
-
-```lua
-a = 3
-b = 4
-conditionalMessage = a < b or "a is less than b!"
-
-print(conditionalMessage) --> true
-```
-
-> The `or` example returns `true` as the result of `a < b`.
-
-## 5 - Loops
+## 4 - Loops
 
 When you'd like to run the same chunk of code repeatedly, you would use a **loop** statement.
 
@@ -622,7 +550,7 @@ end
 print(colors[1].." and "..colors[2].." are awesome! I wonder what they would look like together.")
 ```
 
-## 6 - Functions
+## 5 - Functions
 
 **Functions** are used when you would like to re-use the same chunk of code in more than one place. This helps keep code readable and easier to manage.
 
@@ -694,7 +622,7 @@ end
 If your function happens to take a singular **string** as a parameter, you can also omit the parenthesis `()` and call your function like this:
 
 ```lua
-    function printGreeting(name)
+function printGreeting(name)
     print("Hello there, "..name.."!")
 end
 
@@ -702,7 +630,7 @@ printGreeting "John" --> Hello there, John!
 printGreeting "Mervis" --> Hello there, Mervis!
 ```
 
-## 7 - Scoping
+## 6 - Scoping
 
 In simple programs like the examples mentioned previously, limiting the access of which variables/functions can see other variables/functions is not too important, as most of the program executes within the same scope.
 
@@ -740,56 +668,6 @@ end
 
 > Note: Since function and loop parameters would _always_ be local, you do not need to explicitly state those as local as the Lua interpreter will do that for you.
 
-## 8 - Modules
-
-When it comes time to use an external library, or when you get enough complexity that you would like to split your code into multiple files, you would use **modules**.
-
-Modules are any Lua files that have something that it exports. Everything in a Lua file that is globally scoped can be accessed by other files that import it as a module.
-
-To import a module, you use the `require()` function, and supply the name of a Lua file (without the `.lua` file extension) that exists in the same directory.
-
-```lua
--- File: mod.lua
-local message = "Hello!"
-
-function sayHello()
-    print(message)
-end
-
-------------------------------------
--- File: main.lua
-
-require "mod"
-
-sayHello()
-```
-
-> In the above example, the globally scoped function `sayHello()` is able to be accessed by the file that imports the module. But, since the variable `message` is _locally_ scoped, it cannot be explicitly used in the file that imports the `mod.lua` file.
-
-Although the above example works, common practice for modules is to export a table with all of your exported functions and variables tied to it, sort of like a _namespace_. This helps make your module code easier to read and also lets you more easily know where your module variables and functions are coming from.
-
-```lua
--- File: greeter.lua
-greeter = {}
-
-local message = "Hello"
-greeter.message2 = "World!"
-
-function greeter.sayHello()
-    print(message)
-end
-
-------------------------------------
--- File: main.lua
-
-require "greeter"
-
-greeter.sayHello()
-print greeter.message2
-```
-
-> In the above example, the module file `greeter.lua` has a globally-scoped table also named `greeter`, which allows the importing file to use the table's functions as well as global variables under the same alias.
-
 ## End Note
 
 I will leave you with a few pieces of general programming advice, that hopefully can be helpful in your journey not just with Lua, but with software development in general:
@@ -803,3 +681,9 @@ I will leave you with a few pieces of general programming advice, that hopefully
 All in all, hopefully the concepts in this guide have helped you understand the syntax of the language, as well as learn how to create great computer programs with Lua!
 
 > Note: If you notice anything missing or something that can be improved, feel free to fork this repo and submit a pull request on GitHub!
+
+If you'd like to learn more, be sure to check out the [Lua documentation](https://www.lua.org/docs.html) or one of the more advanced learning articles here:
+
+- [Lua - Ternaries](./Ternaries.md)
+- [Lua - Modules](./Modules.md)
+- [Object-Oriented Programming in Lua](https://www.tutorialspoint.com/lua/lua_object_oriented.htm)
