@@ -68,7 +68,7 @@ Lua is quite a versatile programming language. But, it's mostly best at things l
 
 ## How to get started programming with Lua
 
-For programming, you will need to use a code editor application to create your code, as well as have the compiler for your computer to know how to run Lua code.
+For programming, you will need to use a code editor application to create your code, as well as have the interpreter for your computer to know how to run Lua code.
 
 The easiest way to get started without installing anything is to use an in-browser editor, such as [Replit](https://replit.com/languages/lua).
 
@@ -95,7 +95,7 @@ There are 5 fundamental types of data in Lua:
 
 A **variable** in computer programming is used to store information inside a computer program. Each value that you can give to a variable has a **data type**, which is a term that describes what type of data is stored into a variable.
 
-Lua is a _dynamically typed_ programming language, meaning you don't need to explicitly say what type of data a variable should contain and the Lua compiler will interpret the type for you.
+Lua is a _dynamically typed_ programming language, meaning you don't need to explicitly say what type of data a variable should contain and the Lua interpreter will figure out the type for you.
 
 ### Strings
 
