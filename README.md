@@ -361,7 +361,7 @@ end
 
 ## 4 - Loops
 
-When you'd like to run the same chunk of code repeatedly, you would use a **loop** statement.
+When you'd like to run the same chunk of code repeatedly, you would use a **loop** block.
 
 There's a few different flavors each with their own use cases.
 
@@ -670,7 +670,7 @@ end
 
 ## End Note
 
-I will leave you with a few pieces of general programming advice, that hopefully can be helpful in your journey not just with Lua, but with software development in general:
+Here are a few pieces of general programming advice that hopefully can be helpful in your journey not just with Lua, but with software development in general:
 
 - Never be afraid to ask questions, either from your peers or from online resources like StackOverflow. An important part of gaining wisdom is knowing what you want to know, and being able to come up with questions is usually the best way of doing that.
 - At first, make sure to start building; even if it's something small and silly like a number-guessing game. As you and your skills grow, the problems you would like to solve can grow with you!
