@@ -261,11 +261,11 @@ print(3 ~= 5) --> true
 -- Greater than
 print(3 > 5) --> false
 
+-- Less than
+print(3 < 5) --> true
+
 -- Greater than or equal to
 print(3 >= 3) --> true
-
--- Less than
-print(3 < 5) --> false
 
 -- Less than or equal to
 print(3 <= 5) --> true
