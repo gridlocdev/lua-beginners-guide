@@ -687,3 +687,4 @@ If you'd like to learn more, be sure to check out the [Lua documentation](https:
 - [Lua - Modules](./Modules.md)
 - [Lua - Ternaries](./Ternaries.md)
 - [Object-Oriented Programming in Lua](https://www.tutorialspoint.com/lua/lua_object_oriented.htm)
+- [Learn Lua in Y minutes](https://learnxinyminutes.com/lua/)
