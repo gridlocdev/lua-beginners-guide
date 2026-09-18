@@ -27,7 +27,7 @@ require "talker"
 sayHello()
 ```
 
-> In the above example, the globally scoped function `sayHello()` is able to be accessed by the file that imports the module. But, since the variable `message` is _locally_ scoped, it cannot be explicitly used in the file that imports the `mod.lua` file.
+> In the above example, the globally scoped function `sayHello()` is able to be accessed by the file that imports the module. But, since the variable `message` is _locally_ scoped, it cannot be explicitly used in the `main.lua` file.
 
 Although the above example works, common practice for modules is to export a _table_ with all of the exported functions and variables tied to it. This helps make the code easier to read and lets programmers more easily know where module variables and functions are coming from as they use the module.
 
